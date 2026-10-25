@@ -1,6 +1,6 @@
 # Selective assembly of recovered hydrogen-valve components
 
-A small optimization study motivated by high-pressure hydrogen valves. The question is simple: **if recovered parts are measured and screened, can we use them in precision assemblies at lower cost than buying everything new?**
+A small optimization study motivated by high-pressure hydrogen valves. The question is simple: **if recovered parts are measured, can we use them in precision assemblies at lower cost than buying everything new?**
 
 I chose a representative **solenoid shutoff subassembly**—valve body, replaceable seat insert, and moving plunger/poppet—instead of modelling an entire tank valve. JTEKT's [on-tank hydrogen valve](https://www.jtekt.co.jp/e/products/hydrogen/valve01.html) is the product-level inspiration, **not the source of the dimensions or internal design**. The seat insert and its press fit are modelling assumptions, not claims about JTEKT hardware.
 
@@ -8,8 +8,8 @@ I chose a representative **solenoid shutoff subassembly**—valve body, replacea
 
 A valve body has a seat pocket; the seat insert fits in that pocket; the moving plunger must be able to reach the seat face. Two dimensional conditions are checked for every candidate triplet:
 
-- **Seat installation:** `interference = seat outer diameter − body pocket bore`.
-- **Closing reach:** `overtravel = plunger reach + installed seat height − body pocket depth`.
+- **Seat installation:** interference = seat outer diameter − body pocket bore.
+- **Closing reach:** overtravel = plunger reach + installed seat height − body pocket depth.
 
 The overtravel is a **geometric proxy**, not a prediction of sealing force or leakage. We allow optional resurfacing of a *pre-screened, eligible recovered seat*, which reduces its height by 0, 0.015, or 0.030 mm. Only those fixed alternatives are considered.
 
@@ -23,14 +23,14 @@ Every measured dimension has a bounded error. A triplet is acceptable only if **
 The model is a binary mixed-integer linear program (MILP):
 
 \[
-\min\sum_{(i,j,k,r)\in F} c_{ijkr}x_{ijkr}
+\min\sum_{(i,j,k,r)} c_{ijkr}x_{ijkr}
 \]
 
 subject to **10 completed assemblies**, each physical part used at most once, and at most **3 resurfaced seats**. Candidate triplets outside the robust tolerance limits are removed before optimization. Costs include assumed acquisition/recovery and preparation costs, plus seat finishing when chosen. No separate reward for reuse is included; reuse is a result of cost minimization.
 
 ## Reproduce the study
 
-Requires Python 3.10+.
+Requires Python 3.10.
 
 ```bash
 pip install -r requirements.txt
@@ -51,7 +51,7 @@ The seeded data generator writes 10 new and 6 recovered parts of each type. One 
 
 ![Minimum production costs](results/cost_comparison.png)
 
-The **17.3%** lower cost of S2 relative to S1 comes from the assumed prices and compatible recovered inventory. Resurfacing does not help in this particular sample; allowing a process does not mean it must be used.
+The **17%** lower cost of S2 relative to S1 comes from the assumed prices and compatible recovered inventory. Resurfacing does not help in this particular sample; allowing a process does not mean it must be used.
 
 The most revealing check is to increase the recovered-part preparation cost without changing the measurements. As it rises, the optimizer selects fewer recovered parts; eventually the all-new solution becomes cheaper:
 
@@ -79,4 +79,4 @@ Run `python src/experiment_b.py` to compare the reference inventory (Experiment 
 
 ![Reference and stress-case costs](results/experiment_b_comparison.png)
 
-This is a *constructed example of when resurfacing becomes useful*, not evidence that recovered valve seats commonly have this deviation or that this saving would be achieved in industry.
+
