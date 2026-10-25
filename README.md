@@ -20,13 +20,7 @@ Every measured dimension has a bounded error. A triplet is acceptable only if **
 | Seat interference | 0.006–0.020 |
 | Closing overtravel | 0.025–0.083 |
 
-The model is a binary mixed-integer linear program (MILP):
-
-\[
-\min\sum_{(i,j,k,r)} c_{ijkr}x_{ijkr}
-\]
-
-subject to **10 completed assemblies**, each physical part used at most once, and at most **3 resurfaced seats**. Candidate triplets outside the robust tolerance limits are removed before optimization. Costs include assumed acquisition/recovery and preparation costs, plus seat finishing when chosen. No separate reward for reuse is included; reuse is a result of cost minimization.
+The model is a binary mixed-integer linear program (MILP). Subject to **10 completed assemblies**, each physical part used at most once, and at most **3 resurfaced seats**. Candidate triplets outside the robust tolerance limits are removed before optimization. Costs include assumed acquisition/recovery and preparation costs, plus seat finishing when chosen. No separate reward for reuse is included; reuse is a result of cost minimization.
 
 ## Reproduce the study
 
