@@ -1,0 +1,5 @@
+experiment,scenario,cost_cu,recovered,reworked_seats
+A,S2,1415.79,14,0
+A,S3,1415.79,14,0
+B,S2,1452.77,12,0
+B,S3,1422.79,14,1

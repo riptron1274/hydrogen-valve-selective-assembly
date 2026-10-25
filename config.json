@@ -1,0 +1,12 @@
+{
+  "seed": 20261025 ,
+  "new_per_type": 10,
+  "recovered_per_type": 6,
+  "production_demand": 10,
+  "max_reworked_seats": 3,
+  "interference": [0.006, 0.020],
+  "closing_go_through": [0.025, 0.083],
+  "seat_height_reductions": [0.0, 0.015, 0.030],
+  "seat_rework_cost_cu": [0.0, 7.0, 12.0],
+  "rework_error": 0.0015
+}

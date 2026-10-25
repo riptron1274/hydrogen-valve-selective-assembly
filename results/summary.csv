@@ -1,0 +1,4 @@
+scenario,cost_cu,recovered_count,reworked_seats,candidate_count
+S1,1712.53,0,0,934
+S2,1415.79,14,0,2086
+S3,1415.79,14,0,2434

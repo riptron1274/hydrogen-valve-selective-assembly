@@ -1,0 +1,17 @@
+id,source,eligible,cost_cu,reach,u_reach
+P-N-01,new,True,54.09,9.074344,0.001
+P-N-02,new,True,52.51,9.055482,0.001
+P-N-03,new,True,52.4,9.050768,0.001
+P-N-04,new,True,52.14,9.065867,0.001
+P-N-05,new,True,54.35,9.057659,0.001
+P-N-06,new,True,54.94,9.069176,0.001
+P-N-07,new,True,55.31,9.068555,0.001
+P-N-08,new,True,58.49,9.06673,0.001
+P-N-09,new,True,58.32,9.066158,0.001
+P-N-10,new,True,53.59,9.048912,0.001
+P-R-01,recovered,True,33.27,9.038268,0.0025
+P-R-02,recovered,True,49.87,9.079811,0.0025
+P-R-03,recovered,True,31.19,9.068909,0.0025
+P-R-04,recovered,True,39.97,9.038762,0.0025
+P-R-05,recovered,True,39.8,9.095686,0.0025
+P-R-06,recovered,False,37.08,9.091048,0.0025
