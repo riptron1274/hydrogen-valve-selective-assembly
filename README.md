@@ -61,7 +61,7 @@ The numbers are **illustrative cost units (CU)**, not industrial quotes. This do
 - `src/optimize.py` — compatibility screening and the MILP.
 - `src/run.py` — three policies, one cost-sensitivity experiment, and plots.
 - `results/` — a small summary, S3 selected triplets, and two figures.
-- `tests/test_model.py` — checks geometry, uncertainty, eligibility, uniqueness and the solver.
+
 
 **Next step with real data:** measure actual seat geometry and closure behavior, verify which components are legally and technically recoverable, and incorporate qualified functional test outcomes before optimizing production decisions.
 
